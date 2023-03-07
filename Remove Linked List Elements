@@ -1,0 +1,23 @@
+ ListNode* removeElements(ListNode* head, int val) {
+        ListNode *prev=head;
+        if(head==NULL) return head;
+        
+        ListNode* curr=head->next;
+        while(curr!=NULL){
+            if(curr->val==val){
+                prev->next=curr->next;
+                curr=curr->next;
+            }else{
+                prev=curr;
+                curr=curr->next;
+            }
+        }
+
+        if(head->val==val){
+             ListNode * temp=head->next;
+             head->next=NULL;
+             head=temp;
+        }
+
+        return head;
+    }
