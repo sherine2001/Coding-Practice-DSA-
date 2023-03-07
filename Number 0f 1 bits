@@ -1,0 +1,33 @@
+
+T.C=O(N), N=no of bits in n
+AUX SPACE=O(1)
+
+class Solution {
+public:
+    int hammingWeight(uint32_t n) {
+        int c=0;
+       while(n){
+           int r=n%2;
+           if(r==1) c++;
+           n=n/2;
+
+       }
+       return c;
+    }
+};
+
+
+T.C=O(log N)
+
+class Solution {
+public:
+    int hammingWeight(uint32_t n) {
+        int c=0;
+        
+        while(n!=0){
+         c++;
+         n=n&(n-1);
+        }
+        return c;
+    }
+};
