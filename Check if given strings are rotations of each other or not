@@ -1,0 +1,15 @@
+ bool rotateString(string s, string goal) {
+        string temp,str,comp;
+        comp=s;
+        int n=s.length();
+        for(int i=0;i<n;i++){
+            str=comp.substr(0,n-1);
+            temp=comp[n-1];
+            comp=temp+str;
+          
+           if(temp+str==goal)return true;
+           else continue;
+
+        }
+        return false;
+    }
